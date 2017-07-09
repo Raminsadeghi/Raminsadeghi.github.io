@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang = "fa">
+<head>
+	<meta charset = "UTF-8">
+	<title>تبدیل عدد به حروف در زبان فارسی</title>
+	<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/********************************/
+		/*          Hero Headers        */
+		/********************************/
+		.hero {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: 3;
+			color: #fff;
+			text-align: center;
+			text-transform: uppercase;
+			text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+			-webkit-transform: translate3d(-50%,-50%,0);
+			-moz-transform: translate3d(-50%,-50%,0);
+			-ms-transform: translate3d(-50%,-50%,0);
+			-o-transform: translate3d(-50%,-50%,0);
+			transform: translate3d(-50%,-50%,0);
+		}
+		.hero h1 {
+			font-size: 6em;
+			font-weight: bold;
+			margin: 0;
+			padding: 0;
+		}
+
+		/********************************/
+		/*          Custom Buttons      */
+		/********************************/
+		.btn.btn-lg {padding: 10px 40px;}
+		.btn.btn-hero,
+		.btn.btn-hero:hover,
+		.btn.btn-hero:focus {
+			color: #f5f5f5;
+			background-color: #1abc9c;
+			border-color: #1abc9c;
+			outline: none;
+			margin: 20px auto;
+		}
+
+		/********************************/
+		/*       Slides backgrounds     */
+		/********************************/
+		.fade-carousel .slides .slide-1,
+		.fade-carousel .slides .slide-2,
+		.fade-carousel .slides .slide-3 {
+			height: 100vh;
+			background-size: cover;
+			background-position: center center;
+			background-repeat: no-repeat;
+		}
+		.fade-carousel .slides .slide-1 {
+			background-image: url(https://ununsplash.imgix.net/photo-1416339134316-0e91dc9ded92?q=75&fm=jpg&s=883a422e10fc4149893984019f63c818);
+		}
+
+		/********************************/
+		/*          Media Queries       */
+		/********************************/
+		@media screen and (min-width: 980px){
+			.hero { width: 980px; }
+		}
+		@media screen and (max-width: 640px){
+			.hero h1 { font-size: 4em; }
+		}
+
+		/********************************/
+		/*          Media Queries       */
+		/********************************/
+		.white-bg {
+			background-color: #fff;
+			border-radius: 6px;
+		}
+	</style>
+</head>
+<body dir = "rtl">
+<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+	<!-- Overlay -->
+	<div class="overlay"></div>
+
+	<!-- Wrapper for slides -->
+	<div class="carousel-inner">
+		<div class="item slides active">
+			<div class="slide-1"></div>
+			<div class="hero">
+				<div class = "row">
+					<div class = "col-md-2">&nbsp;</div>
+					<div class = "col-md-8">
+						<form action = "#">
+							<div class = "form-group input-group-lg">
+								<label for = "number" class="h1 text-center">لطفا یک عدد حداکثر 20 رقمی وارد نمایید</label>
+								<input class = "form-control" id = "number" type = "number" maxlength = "20" dir="ltr" oninput = "showLetter(this)" placeholder = "عدد شما" />
+							</div>
+						</form>
+					</div>
+					<div class = "col-md-2">&nbsp;</div>
+				</div>
+				<div class="row">
+					<p class = "text-primary h3 white-bg" id = "letterShow"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src = "numberToLetter.js"></script>
+<script>
+	var myRaminCounter = 0;
+	function showLetter(input) {
+		document.getElementById('letterShow').innerHTML = numberInLetters(input.value);
+	}
+</script>
+</body>
+</html>
